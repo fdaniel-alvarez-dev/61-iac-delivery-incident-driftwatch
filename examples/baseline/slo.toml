@@ -1,0 +1,9 @@
+[service]
+name = "partner-comms-genai"
+tier = "critical"
+
+[slos]
+availability_target = 99.9
+error_rate_target = 0.1
+latency_p95_ms_target = 350
+

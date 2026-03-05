@@ -1,0 +1,17 @@
+[pipeline]
+name = "infra-and-service-delivery"
+
+required_gates = [
+  "fmt",
+  "lint",
+  "unit_tests",
+  "terraform_plan",
+  "security_scan",
+  "smoke_tests",
+]
+
+requires_plan_before_apply = false
+requires_approval_to_deploy = false
+requires_protected_branch = false
+requires_artifact_retention_days = 7
+rollback_strategy = ""

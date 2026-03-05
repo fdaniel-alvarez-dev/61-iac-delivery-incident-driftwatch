@@ -1,0 +1,3 @@
+{"id":"INC-1001","started":"2026-02-10T18:11:00Z","resolved":"2026-02-10T20:21:00Z","severity":"sev2","category":"latency","summary":"p95 latency regression after deployment","primary_mitigation":"rollback","owner":"ai-platform"}
+{"id":"INC-1002","started":"2026-02-18T07:25:00Z","resolved":"2026-02-18T09:55:00Z","severity":"sev2","category":"errors","summary":"inference gateway 5xx spike due to config drift","primary_mitigation":"reconcile-config","owner":"ai-platform"}
+{"id":"INC-1003","started":"2026-02-23T03:10:00Z","resolved":"2026-02-23T03:50:00Z","severity":"sev3","category":"delivery","summary":"pipeline failure blocked release; missing cache caused 40m rebuild","primary_mitigation":"pipeline-fix","owner":"devx"}

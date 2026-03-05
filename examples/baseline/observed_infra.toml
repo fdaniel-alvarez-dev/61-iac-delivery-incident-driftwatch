@@ -1,0 +1,33 @@
+# Observed inventory (what actually exists) — baseline is compliant with desired.
+
+[[resources]]
+id = "vpc-main"
+type = "network.vpc"
+immutable_attrs = ["cidr"]
+
+[resources.attrs]
+cidr = "10.10.0.0/16"
+region = "us-west-2"
+tags = { env = "prod", owner = "ai-platform", cost_center = "ml-infra" }
+
+[[resources]]
+id = "k8s-cluster"
+type = "compute.kubernetes"
+immutable_attrs = ["version"]
+
+[resources.attrs]
+version = "1.29"
+node_pools = 3
+private_nodes = true
+tags = { env = "prod", owner = "ai-platform", cost_center = "ml-infra" }
+
+[[resources]]
+id = "inference-gateway"
+type = "service.api"
+immutable_attrs = ["public"]
+
+[resources.attrs]
+public = false
+rate_limit_rps = 250
+tags = { env = "prod", owner = "ai-platform", cost_center = "ml-infra" }
+

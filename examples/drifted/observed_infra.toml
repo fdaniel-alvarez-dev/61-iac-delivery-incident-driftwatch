@@ -1,0 +1,33 @@
+# Observed inventory (what actually exists)
+
+[[resources]]
+id = "vpc-main"
+type = "network.vpc"
+immutable_attrs = ["cidr"]
+
+[resources.attrs]
+cidr = "10.10.0.0/16"
+region = "us-west-2"
+tags = { env = "prod", owner = "ai-platform" }
+
+[[resources]]
+id = "k8s-cluster"
+type = "compute.kubernetes"
+immutable_attrs = ["version"]
+
+[resources.attrs]
+version = "1.28"
+node_pools = 3
+private_nodes = true
+tags = { env = "prod", owner = "ai-platform", cost_center = "ml-infra" }
+
+[[resources]]
+id = "manual-s3-bucket"
+type = "storage.object"
+immutable_attrs = ["name"]
+
+[resources.attrs]
+name = "unmanaged-bucket-123"
+public = true
+tags = { env = "prod", owner = "unknown" }
+
